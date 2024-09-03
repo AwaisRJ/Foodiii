@@ -23,8 +23,8 @@ const CartTable = () => {
                     <td>{item.image}</td>
                     <td>{item.name}</td>
                     <td>${item.price}</td>
-                    <td>1</td>
-                    <td>3</td>
+                    <td>4</td>
+                    <td>6</td>
                     <td>Remove</td>
                     </div>)
                 } )}
