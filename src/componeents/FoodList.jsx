@@ -14,9 +14,10 @@ function FoodList(props) {
   return (
     <div>
       <div
-        className="cursor-pointer"
+        className="cursor-pointer shadow-lg transition ease-in-out delay-150
+        hover:-translate-y-1 hover:scale-110 duration-100
+        "
         key={props.id}
-        transition={{ delay: 0.5, duration: 1.5 }}
       >
         <div className="relative">
           <img className="rounded-lg" src={props.image} alt={props.name} />
@@ -48,12 +49,14 @@ function FoodList(props) {
             </div>
           )}
         </div>
+        <div className="px-2">
         <div className="flex justify-between pt-2 pb-2">
           <h1 className="font-bold text-lg">{props.name}</h1>
           <img className="w-16 h-6" src={assets.rating_starts} />
         </div>
-        <p>{props.description}</p>
+        <p className="">{props.description}</p>
         <h3 className="text-orange-500 text-lg font-bold">${props.price}</h3>
+      </div>
       </div>
     </div>
   );
