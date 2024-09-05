@@ -21,7 +21,7 @@ function Navbar() {
         <h1>Tomato.</h1>
       </div>
       <div>
-        <ul className="flex gap-7 cursor-pointer">
+        <ul className="md:flex lg:gap-7 md:gap-2 sm:hidden max-sm:hidden cursor-pointer">
           <li
             onClick={() => {
               setMenu("home");
@@ -56,8 +56,8 @@ function Navbar() {
           </li>
         </ul>
       </div>
-      <div className="flex gap-10 justify-center items-center cursor-pointer">
-        <img className="size-8" src={assets.search_icon} alt="Search Icon" />
+      <div className="flex lg:gap-10 md:gap-4 sm:gap-4 max-sm:gap-6 justify-center items-center cursor-pointer">
+        <img className="" src={assets.search_icon} alt="Search Icon" />
         <img onClick={toggleHandler} src={assets.basket_icon} alt="Cart" />
         <motion.button
           className="rounded-full border-2 py-2 px-4"

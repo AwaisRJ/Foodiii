@@ -9,7 +9,8 @@ function Menu(props) {
         mission <br />
         is to statisfy your craving and elevate your dinning experience.
       </p>
-      <div className="flex justify-between cursor-pointer">
+      <div className="grid cursor-pointer md:grid-cols-8 md:col-span-8 
+      sm:grid-cols-4 sm:col-span-4 max-sm:grid-cols-4 max-sm:col-span-4">
        {menu_list.map((item, index)=> {
              return(
               <div className="flex flex-col items-center"

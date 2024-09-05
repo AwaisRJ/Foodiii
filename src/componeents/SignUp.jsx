@@ -42,7 +42,7 @@ const SignUp = () => {
         </div>
         <button className="bg-orange-500 text-white font-bold w-full p-2 rounded-md">{currState ? "Create Account" : "Login"}</button>
         <div className="flex gap-2 mt-3 mb-6">
-          <input type="checkbox" />
+          <input type="checkbox" required />
           <p>By contributing, I agree to the terms and privacy policy.</p>
         </div>
         {currState ? (

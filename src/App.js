@@ -13,12 +13,12 @@ function App() {
       <Router>
         <Navbar />
        {signInVisible && <SignUp />}
+       {cartIsVisible && <Cart />}
         <Routes>
           <Route path="/" element={!cartIsVisible && <Home />} />
         </Routes>
       </Router>
       <Footer />
-      {cartIsVisible && <Cart />}
     </div>
   );
 }

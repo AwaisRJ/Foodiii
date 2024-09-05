@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = {quantity: 0};
+const initialState = { quantity: 0};
 const itemQuantitySlice = createSlice({
   name: 'quantity',
   initialState: initialState,
