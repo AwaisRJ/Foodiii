@@ -2,10 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const CartSlice = createSlice({
 name: 'cart',
-initialState: { cartIsVisible: false },
+initialState: { cartIsVisible: false, signIn: true },
 reducers: {
     toggle(state){
         state.cartIsVisible = !state.cartIsVisible;
+    },
+    SignInToggle(state){
+        state.signIn = !state.signIn;
     }
 }
 });

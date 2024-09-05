@@ -17,7 +17,6 @@ function FoodList(props) {
         className="cursor-pointer shadow-lg transition ease-in-out delay-150
         hover:-translate-y-1 hover:scale-110 duration-100
         "
-        key={props.id}
       >
         <div className="relative">
           <img className="rounded-lg" src={props.image} alt={props.name} />

@@ -4,13 +4,18 @@ import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { cartAction } from "../store/cart-slice";
 import { Link } from "react-router-dom";
+import { signInAction } from "../store/login-slice";
 function Navbar() {
   const dispatch = useDispatch();
   const toggleHandler = () => {
     dispatch(cartAction.toggle());
   };
+  const SignUpHandler = () => {
+    dispatch(signInAction.SignInToggle());
+  }
   const [menu, setMenu] = useState("home");
   return (
+    <div className="m-auto w-[80%]">
     <header className="flex flex-1 justify-between items-center py-5">
       <div className="text-orange-500 text-2xl font-bold">
         <h1>Tomato.</h1>
@@ -56,14 +61,15 @@ function Navbar() {
         <img onClick={toggleHandler} src={assets.basket_icon} alt="Cart" />
         <motion.button
           className="rounded-full border-2 py-2 px-4"
+          onClick={SignUpHandler}
           whileHover={{
             scale: 1.1,
-          }}
-        >
+          }} >
           Sign In
         </motion.button>
       </div>
     </header>
+    </div>
   );
 }
 
