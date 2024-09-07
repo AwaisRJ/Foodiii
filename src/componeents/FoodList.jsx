@@ -2,14 +2,20 @@ import { assets } from "../assets/assets";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { itemQuantityActions } from "../store/ItemQuantity";
+import { cartAction } from "../store/cart-slice";
 function FoodList(props) {
-  const quantity = useSelector(state => state.quantity.quantity);
+  const quantity = useSelector(state => state.cart.itemQuantity);
   const dispatch = useDispatch();
-  const incrementHandler = () => {
-    dispatch(itemQuantityActions.increment());
+  const addCartToHandler = () => {
+    dispatch(cartAction.addItemsToCart({
+      id: props.id,
+      name: props.name,
+      image: props.image,
+      price: props.price
+    }));
   };
-  const decrementHandler = () => {
-    dispatch(itemQuantityActions.decrement());
+  const removeCartHandler = () => {
+    dispatch(cartAction.removeItemsFromCart(props.id));
   };
   return (
     <div>
@@ -22,7 +28,7 @@ function FoodList(props) {
           {!quantity ? (
             <motion.img
               className="absolute right-4 bottom-4 w-6 cursor-pointer"
-              onClick={incrementHandler}
+              onClick={addCartToHandler}
               src={assets.add_icon_white}
               alt="Plus Icon"
               whileHover={{
@@ -34,13 +40,13 @@ function FoodList(props) {
           ) : (
             <div className="flex items-center absolute right-14 bottom-4 w-6 cursor-pointer gap-1 rounded-full">
               <img
-                onClick={decrementHandler}
+                onClick={removeCartHandler}
                 src={assets.remove_icon_red}
                 alt="Plus Icon"
               />
               <p className="font-bold text-lg">{quantity}</p>
               <img
-                onClick={incrementHandler}
+                onClick={addCartToHandler}
                 src={assets.add_icon_green}
                 alt="Plus Icon"
               />
