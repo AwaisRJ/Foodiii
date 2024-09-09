@@ -1,10 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import itemQuantitySlice from "./ItemQuantity";
 import CartSlice from "./cart-slice";
 import SignInSlice from "./login-slice";
 const store = configureStore({
   reducer: {
-    quantity: itemQuantitySlice.reducer,
     cart: CartSlice.reducer,
     signin: SignInSlice.reducer,
   },

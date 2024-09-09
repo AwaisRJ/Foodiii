@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartAction } from "../store/cart-slice";
 import { Link } from "react-router-dom";
 import { signInAction } from "../store/login-slice";
 function Navbar() {
   const dispatch = useDispatch();
+const quantity = useSelector(state => state.cart.totalQuantity)
   const toggleHandler = () => {
     dispatch(cartAction.toggle());
   };

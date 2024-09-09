@@ -1,7 +1,6 @@
 import { assets } from "../assets/assets";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import { itemQuantityActions } from "../store/ItemQuantity";
 import { cartAction } from "../store/cart-slice";
 function FoodList(props) {
   const quantity = useSelector(state => state.cart.itemQuantity);
