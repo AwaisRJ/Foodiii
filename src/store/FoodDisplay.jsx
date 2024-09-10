@@ -7,9 +7,10 @@ const FoodDisplay = (props) => {
       <h1 className="font-bold text-xl">Top Dishes Near Me</h1>
       <div
         className="grid lg:grid-cols-4 lg:col-span-4 
-      md:sm:grid-cols-3 md:sm:col-span-3 
+      md:grid-cols-3 md:col-span-3 
+      sm:grid-cols-3 sm:col-span-3
       max-sm:grid-cols-2 max-sm:col-span-2 
-      gap-3 mt-4"
+      gap-3 mt-4 max-[380px]:grid-cols-1 max-[380px]:col-span-1"
       >
         {food_list.map((item, index) => {
           if (props.category === "ALL" || props.category === item.category) {

@@ -1,5 +1,4 @@
 import React from "react";
-import { assets } from "../assets/assets";
 import { motion } from "framer-motion";
 function Hero() {
   return (
@@ -16,10 +15,11 @@ function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 1.5 }}
       >
-        <h1 className="font-bold lg:text-4xl md:text-3xl sm:text-lg max-sm:text-lg ">
+        <h1 className="font-bold lg:text-4xl md:text-3xl sm:text-lg 
+        max-sm:text-lg max-[520px]:text-sm">
           Order Your <br /> Favorite Food Here
         </h1>
-        <p>
+        <p className="max-sm:text-md max-[520px]:text-xs">
           Choose from a diverse menu and selct according to your taste and
           personality. <br />
           Check our favorit meals that are loved by almost every customer.{" "}

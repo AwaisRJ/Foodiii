@@ -5,10 +5,11 @@ const Footer = () => {
   return (
     <div className="bg-[#323232] text-white px-5 py-10 mt-8">
     <div
-      className="flex justify-between w-full"
+      className="flex min-[616px]:flex-row min-[616px]:justify-between 
+      max-[615px]:flex-col max-[615px]:items-center w-full"
       id="footer" >
      
-      <div className="w-1/3">
+      <div className="min-[616px]:w-1/3 max-[615px]:w-full">
         <h1 className="text-orange-500 font-bold text-3xl pb-3">Tomato.</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit odit
@@ -51,7 +52,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div>
+      <div className="max-[615px]:w-full mt-3">
         <h1 className="font-bold text-3xl pb-3">Company</h1>
         <ul>
           <li>Home</li>
@@ -60,7 +61,7 @@ const Footer = () => {
           <li>Privacy Policy</li>
         </ul>
       </div>
-      <div>
+      <div className="max-[615px]:w-full mt-3">
         <h1 className="font-bold text-3xl pb-3">GET IN TOUCH</h1>
         <ul>
           <li>+44 233 3212</li>
