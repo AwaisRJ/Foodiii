@@ -2,7 +2,7 @@ import React from 'react'
 import { assets } from '../assets/assets';
 const AppDownload = () => {
   return (
-    <div className='flex flex-col justify-center items-center 
+    <div id='app-download' className='flex flex-col justify-center items-center 
     min-[690px]:text-3xl max-[689px]:text-xl 
     mt-20 mb-10 font-bold'>
       <h1>For Better Experience Please Download <br /> <span className='flex justify-center text-orange-500'> Tomato App</span></h1>

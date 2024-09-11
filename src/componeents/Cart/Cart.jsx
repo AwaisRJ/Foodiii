@@ -1,13 +1,18 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartAction } from "../../store/cart-slice";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart.items);
   const cartTotalAmount = useSelector((state) => state.cart.totalPrice);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();
-
+  function PaymentHandler(){
+    dispatch(cartAction.toggle());
+    navigate('/order');
+  }
   return (
     <div className="m-auto w-[80%]">
       <div className="mb-14">
@@ -53,16 +58,17 @@ const Cart = () => {
           <hr className="h-[1px] my-4 bg-gray-500 border-none" />
           <div className="flex justify-between">
             <p>Delivery Fee</p>
-            <p>${5}</p>
+            <p>${cartTotalAmount===0?0:5}</p>
           </div>
           <hr className="h-[1px] my-4 bg-gray-500 border-none" />
           <div className="flex justify-between">
             <p>Total</p>
-            <p>${cartTotalAmount + 5}</p>
+            <p>${cartTotalAmount===0?0:cartTotalAmount + 5}</p>
           </div>
           <hr className="h-[1px] my-4 bg-gray-500 border-none" />
-          <button className="bg-orange-500 text-white mt-2 px-5 py-2 rounded-lg">
-            Proceed to CheckOut
+          <button className="bg-orange-500 text-white mt-2 px-5 py-2 rounded-lg"
+          onClick={PaymentHandler}>
+            Proceed to Checkout
           </button>
         </div>
         <div className=" mt-16">

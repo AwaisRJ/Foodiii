@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { menu_list } from "../assets/assets";
 function Menu(props) {
   return (
-    <div className="flex flex-col pt-5 gap-5" id="explore-menu">
+    <section id="menu" className="flex flex-col pt-5 gap-5" >
       <h1 className="font-bold text-2xl">Explore Our Menu!</h1>
       <p>
         Choose from a diverse menu featuring a delectable array of dises. Our
@@ -26,7 +26,7 @@ function Menu(props) {
              )
        })}
        </div>
-    </div>
+    </section>
   );
 }
 

@@ -3,14 +3,17 @@ import { assets } from "../assets/assets";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { cartAction } from "../store/cart-slice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signInAction } from "../store/login-slice";
 function Navbar() {
   const cartTotalAmount = useSelector((state) => state.cart.totalPrice);
   const dispatch = useDispatch();
   const quantity = useSelector((state) => state.cart.totalQuantity);
+  const cartIsVisible = useSelector((state) => state.cart.cartIsVisible);
+  const navigate = useNavigate();
   const toggleHandler = () => {
     dispatch(cartAction.toggle());
+   {cartIsVisible===false ? navigate('/cart'):navigate('/') }
   };
   const SignUpHandler = () => {
     dispatch(signInAction.SignInToggle());
@@ -30,7 +33,7 @@ function Navbar() {
               }}
               className={menu === "home" ? "active:pb-1 border-b-2" : ""}
             >
-              <Link to="/">Home</Link>
+              <a href="/">Home</a>
             </li>
             <li
               onClick={() => {
@@ -38,7 +41,7 @@ function Navbar() {
               }}
               className={menu === "menu" ? "active:pb-1 border-b-2" : ""}
             >
-              <Link to="/menu">Menu</Link>
+              <a href="#menu">Menu</a>
             </li>
             <li
               onClick={() => {
@@ -46,7 +49,7 @@ function Navbar() {
               }}
               className={menu === "mobile-app" ? "active:pb-1 border-b-2" : ""}
             >
-              Mobile App
+             <a href="#app-download">Mobile App</a>
             </li>
             <li
               onClick={() => {
@@ -54,7 +57,7 @@ function Navbar() {
               }}
               className={menu === "contact-us" ? "active:pb-1 border-b-2" : ""}
             >
-              Contact Us
+             <a href="#app-download">Contact Us</a> 
             </li>
           </ul>
         </div>
@@ -70,7 +73,7 @@ function Navbar() {
             {cartTotalAmount === 0 ? (
               ""
             ) : (
-              <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
             )}
           </div>
           <motion.button
