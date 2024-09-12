@@ -2,8 +2,10 @@ import { assets } from "../assets/assets";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { cartAction } from "../store/cart-slice";
+import { useState } from "react";
 function FoodList(props) {
-  const quantity = useSelector(state => state.cart.itemQuantity);
+  // const quantity = useSelector(state => state.cart.items);
+  const [cartItems, setCartItems] = useState(0);
   const dispatch = useDispatch();
   const addCartToHandler = () => {
     dispatch(cartAction.addItemsToCart({
@@ -12,9 +14,12 @@ function FoodList(props) {
       image: props.image,
       price: props.price
     }));
+    setCartItems(prev => prev + 1 );
   };
   const removeCartHandler = () => {
     dispatch(cartAction.removeItemsFromCart(props.id));
+    setCartItems(prev => prev - 1 );
+
   };
   return (
     <div>
@@ -24,7 +29,7 @@ function FoodList(props) {
       >
         <div className="relative">
           <img className="rounded-lg" src={props.image} alt={props.name} />
-          {!quantity ? (
+          {!cartItems ? (
             <motion.img
               className="absolute right-4 bottom-4 w-6 cursor-pointer"
               onClick={addCartToHandler}
@@ -43,7 +48,7 @@ function FoodList(props) {
                 src={assets.remove_icon_red}
                 alt="Plus Icon"
               />
-              <p className="font-bold text-lg">{quantity}</p>
+              <p className="font-bold text-lg">{cartItems}</p>
               <img
                 onClick={addCartToHandler}
                 src={assets.add_icon_green}
