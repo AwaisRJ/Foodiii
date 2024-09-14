@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import CartSlice from "./cart-slice";
 import SignInSlice from "./login-slice";
+import uiSlice from "./ui-slice";
 const store = configureStore({
   reducer: {
     cart: CartSlice.reducer,
     signin: SignInSlice.reducer,
+    ui: uiSlice.reducer,
   },
 });
 export default store;

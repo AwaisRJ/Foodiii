@@ -12,7 +12,7 @@ const FoodDisplay = (props) => {
       max-sm:grid-cols-2 max-sm:col-span-2 
       gap-3 mt-4 max-[380px]:grid-cols-1 max-[380px]:col-span-1"
       >
-        {food_list.map((item, index) => {
+        {food_list?.map((item, index) => {
           if (props.category === "ALL" || props.category === item.category) {
             return (
               <FoodList

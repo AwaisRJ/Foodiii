@@ -24,7 +24,7 @@ const Cart = () => {
           <p>Total</p>
           <p>Remove</p>
         </div>
-        {cartItems.map((item) => (
+        {cartItems?.map((item) => (
           <>
             <hr className="h-[1px] my-4 bg-gray-500 border-none" />
             <div className="grid grid-cols-6 col-span-6 items-center">
